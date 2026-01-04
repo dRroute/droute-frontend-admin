@@ -1,24 +1,27 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Truck, Clock, Shield, Star, MapPin, Phone } from "lucide-react"
-import LoginModal from "./LoginModal"
+import { useState } from "react";
+import { Truck, Clock, Shield, Star, MapPin, Phone } from "lucide-react";
+import LoginModal from "./LoginModal";
 // import SignupModal from "./SignupModal"
-import ForgotPasswordModal from "./ForgotPasswordModal"
-
+import ForgotPasswordModal from "./ForgotPasswordModal";
+import whiteLogo from "../assets/transparentIcon.png";
 export default function Landing() {
-  const [activeModal, setActiveModal] = useState(null) // 'login', 'signup', 'forgot-password', or null
+  const [activeModal, setActiveModal] = useState(null); // 'login', 'signup', 'forgot-password', or null
 
-  const openModal = (modalType) => setActiveModal(modalType)
-  const closeModal = () => setActiveModal(null)
+  const openModal = (modalType) => setActiveModal(modalType);
+  const closeModal = () => setActiveModal(null);
 
   return (
     <div className="flex flex-col min-h-screen">
       <header className="px-4 lg:px-6 h-16 flex items-center border-b">
-        <a href="/" className="flex items-center justify-center">
-          <Truck className="h-8 w-8 text-orange-500" />
-          <span className="ml-2 text-xl font-bold">Droute</span>
+        <a
+          href="/"
+          className="flex items-center justify-center focus:outline-none"
+        >
+          <img src={whiteLogo} alt="Droute Logo" className="h-8 invert" />
         </a>
+
         <nav className="ml-auto flex gap-4 sm:gap-6">
           <button
             onClick={() => openModal("login")}
@@ -33,7 +36,7 @@ export default function Landing() {
       <LoginModal
         isOpen={activeModal === "login"}
         onClose={closeModal}
-        onSwitchToSignup={() => openModal("signup")}
+        // onSwitchToSignup={() => openModal("signup")}
         onSwitchToForgotPassword={() => openModal("forgot-password")}
       />
 
@@ -57,8 +60,9 @@ export default function Landing() {
                     <span className="text-orange-500"> Anywhere</span>
                   </h1>
                   <p className="max-w-[600px] text-gray-600 md:text-xl">
-                    Get your packages delivered quickly and safely. Same-day delivery available in most areas. Track
-                    your orders in real-time with our advanced logistics system.
+                    Get your packages delivered quickly and safely. Same-day
+                    delivery available in most areas. Track your orders in
+                    real-time with our advanced logistics system.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -72,9 +76,9 @@ export default function Landing() {
                     <span className="font-medium">4.9/5</span>
                   </div>
                   <span>•</span>
-                  <span>10,000+ Happy Customers</span>
+                  <span>1000+ Happy Customers</span>
                   <span>•</span>
-                  <span>Same Day Delivery</span>
+                  <span>Collaborative Booking</span>
                 </div>
               </div>
               <div className="flex items-center justify-center">
@@ -98,10 +102,12 @@ export default function Landing() {
                 <div className="inline-block rounded-lg bg-orange-100 px-3 py-1 text-sm text-orange-800">
                   Our Services
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Why Choose Droute?</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Why Choose Droute?
+                </h2>
                 <p className="max-w-[900px] text-gray-600 md:text-xl">
-                  We provide fast, secure, and reliable delivery services with real-time tracking and 24/7 customer
-                  support.
+                  We provide fast, secure, and reliable delivery services with
+                  real-time tracking and 24/7 customer support.
                 </p>
               </div>
             </div>
@@ -112,7 +118,8 @@ export default function Landing() {
                 </div>
                 <h3 className="text-xl font-bold">Fast Delivery</h3>
                 <p className="text-center text-gray-600">
-                  Same-day and next-day delivery options available. Get your packages when you need them.
+                  Same-day and next-day delivery options available. Get your
+                  packages when you need them.
                 </p>
               </div>
               <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 flex flex-col items-center space-y-4">
@@ -121,7 +128,8 @@ export default function Landing() {
                 </div>
                 <h3 className="text-xl font-bold">Secure & Safe</h3>
                 <p className="text-center text-gray-600">
-                  Your packages are insured and handled with care. Real-time tracking for complete transparency.
+                  Your packages are insured and handled with care. Real-time
+                  tracking for complete transparency.
                 </p>
               </div>
               <div className="bg-white border border-gray-200 rounded-lg shadow-sm p-6 flex flex-col items-center space-y-4">
@@ -130,7 +138,8 @@ export default function Landing() {
                 </div>
                 <h3 className="text-xl font-bold">Wide Coverage</h3>
                 <p className="text-center text-gray-600">
-                  Delivering to over 500 cities nationwide. Local and long-distance delivery services available.
+                  Delivering to over 500 cities nationwide. Local and
+                  long-distance delivery services available.
                 </p>
               </div>
             </div>
@@ -142,19 +151,29 @@ export default function Landing() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-4 lg:gap-12">
               <div className="flex flex-col items-center space-y-2 text-center">
-                <div className="text-4xl md:text-5xl font-bold text-orange-500">50K+</div>
-                <div className="text-sm text-gray-600">Deliveries Completed</div>
+                <div className="text-4xl md:text-5xl font-bold text-orange-500">
+                  50K+
+                </div>
+                <div className="text-sm text-gray-600">
+                  Deliveries Completed
+                </div>
               </div>
               <div className="flex flex-col items-center space-y-2 text-center">
-                <div className="text-4xl md:text-5xl font-bold text-orange-500">500+</div>
+                <div className="text-4xl md:text-5xl font-bold text-orange-500">
+                  500+
+                </div>
                 <div className="text-sm text-gray-600">Cities Covered</div>
               </div>
               <div className="flex flex-col items-center space-y-2 text-center">
-                <div className="text-4xl md:text-5xl font-bold text-orange-500">24/7</div>
+                <div className="text-4xl md:text-5xl font-bold text-orange-500">
+                  24/7
+                </div>
                 <div className="text-sm text-gray-600">Customer Support</div>
               </div>
               <div className="flex flex-col items-center space-y-2 text-center">
-                <div className="text-4xl md:text-5xl font-bold text-orange-500">99.9%</div>
+                <div className="text-4xl md:text-5xl font-bold text-orange-500">
+                  99.9%
+                </div>
                 <div className="text-sm text-gray-600">On-Time Delivery</div>
               </div>
             </div>
@@ -166,7 +185,9 @@ export default function Landing() {
           <div className="container mx-auto px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">How It Works</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  How It Works
+                </h2>
                 <p className="max-w-[900px] text-gray-600 md:text-xl">
                   Simple steps to get your package delivered quickly and safely.
                 </p>
@@ -179,8 +200,8 @@ export default function Landing() {
                 </div>
                 <h3 className="text-xl font-bold">Book Online</h3>
                 <p className="text-gray-600">
-                  Schedule your pickup online or through our mobile app. Choose your delivery speed and get instant
-                  pricing.
+                  Schedule your pickup online or through our mobile app. Choose
+                  your delivery speed and get instant pricing.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-4 text-center">
@@ -189,8 +210,8 @@ export default function Landing() {
                 </div>
                 <h3 className="text-xl font-bold">We Pickup</h3>
                 <p className="text-gray-600">
-                  Our driver arrives at your location to collect the package. No need to wait around - we work with your
-                  schedule.
+                  Our driver arrives at your location to collect the package. No
+                  need to wait around - we work with your schedule.
                 </p>
               </div>
               <div className="flex flex-col items-center space-y-4 text-center">
@@ -199,8 +220,8 @@ export default function Landing() {
                 </div>
                 <h3 className="text-xl font-bold">Fast Delivery</h3>
                 <p className="text-gray-600">
-                  Track your package in real-time as we deliver it safely to the destination. Get notifications every
-                  step of the way.
+                  Track your package in real-time as we deliver it safely to the
+                  destination. Get notifications every step of the way.
                 </p>
               </div>
             </div>
@@ -215,16 +236,17 @@ export default function Landing() {
                 Ready to Ship Your Package?
               </h2>
               <p className="max-w-[600px] text-orange-100 md:text-xl">
-                Get started today and experience the fastest, most reliable delivery service in your area.
+                Get started today and experience the fastest, most reliable
+                delivery service in your area.
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row lg:justify-end">
               <button className="bg-white text-orange-500 px-6 py-3 rounded-lg text-lg font-medium hover:bg-gray-50 transition-colors">
-                Schedule Pickup
+                Download App
               </button>
-              <button className="border border-white text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-white hover:text-orange-500 transition-colors">
+              {/* <button className="border border-white text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-white hover:text-orange-500 transition-colors">
                 Get Quote
-              </button>
+              </button> */}
             </div>
           </div>
         </section>
@@ -233,13 +255,16 @@ export default function Landing() {
         <section className="w-full py-12 md:py-24 lg:py-32 border-t">
           <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6">
             <div className="space-y-3">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Stay Updated</h2>
+              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">
+                Stay Updated
+              </h2>
               <p className="mx-auto max-w-[600px] text-gray-600 md:text-xl">
-                Subscribe to get delivery updates, special offers, and shipping tips delivered to your inbox.
+                Subscribe to get delivery updates, special offers, and shipping
+                tips delivered to your inbox.
               </p>
             </div>
             <div className="mx-auto w-full max-w-sm space-y-2">
-              <form className="flex gap-2">
+              {/* <form className="flex gap-2">
                 <input
                   type="email"
                   placeholder="Enter your email"
@@ -251,13 +276,13 @@ export default function Landing() {
                 >
                   Subscribe
                 </button>
-              </form>
-              <p className="text-xs text-gray-600">
+              </form> */}
+              {/* <p className="text-xs text-gray-600">
                 {"By subscribing, you agree to our "}
                 <a href="/privacy" className="underline underline-offset-2 text-orange-500 hover:text-orange-600">
                   Privacy Policy
                 </a>
-              </p>
+              </p> */}
             </div>
           </div>
         </section>
@@ -266,21 +291,32 @@ export default function Landing() {
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <div className="flex items-center gap-2">
           <Truck className="h-5 w-5 text-orange-500" />
-          <p className="text-xs text-gray-600">© 2024 Droute. All rights reserved.</p>
+          <p className="text-xs text-gray-600">
+            © 2024 Droute. All rights reserved.
+          </p>
         </div>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <a href="#" className="text-xs hover:underline underline-offset-4 text-gray-600">
+          <a
+            href="#"
+            className="text-xs hover:underline underline-offset-4 text-gray-600"
+          >
             Terms of Service
           </a>
-          <a href="#" className="text-xs hover:underline underline-offset-4 text-gray-600">
+          <a
+            href="#"
+            className="text-xs hover:underline underline-offset-4 text-gray-600"
+          >
             Privacy Policy
           </a>
-          <a href="#" className="text-xs hover:underline underline-offset-4 flex items-center gap-1 text-gray-600">
+          <a
+            href="#"
+            className="text-xs hover:underline underline-offset-4 flex items-center gap-1 text-gray-600"
+          >
             <Phone className="h-3 w-3" />
             Support
           </a>
         </nav>
       </footer>
     </div>
-  )
+  );
 }

@@ -3,11 +3,15 @@ import React, { useState } from "react";
 import { FaEdit } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { JourneyControlModal } from "../component/reusableComponent";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAuthErrorMessage, selectAuthloader } from "../redux/selector";
 function DriverJourney() {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const [controlModalOpen, setControlModalOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+     const dispatch = useDispatch();
+  const isLoading = useSelector(selectAuthloader);
+  const errorMessage = useSelector(selectAuthErrorMessage);
 
   const [selectedJourney, setSelectedJourney] = useState(false);
   const tableHeaders = [

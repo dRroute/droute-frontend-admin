@@ -1,27 +1,48 @@
 import React, { useState } from "react";
 import {
-  CreateUserModal,
+  CreateDriverModal,
+  DriverControlModal,
   ImageModal,
   StatusModal,
 } from "../component/reusableComponent";
 import { FaEdit } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { selectAuthErrorMessage, selectAuthloader } from "../redux/selector";
 
-function UserEntity() {
+function AllDrivers() {
   const [search, setSearch] = useState("");
   const [imageModalOpen, setImageModalOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
   const [statusModalOpen, setStatusModalOpen] = useState(false);
   const [selectedRowIndex, setSelectedRowIndex] = useState(null);
-  const [createUserModalOpen, setCreateUserModalOpen] = useState(false);
- const [isLoading, setIsLoading] = useState(false);
+  const [createDriverModalOpen, setCreateDriverModalOpen] = useState(false);
+  const [controlModalOpen, setControlModalOpen] = useState(false);
+  const [selectedDriver, setSelectedDriver] = useState(null);
+  const dispatch = useDispatch();
+  const isLoading = useSelector(selectAuthloader);
+  const errorMessage = useSelector(selectAuthErrorMessage);
+
   const tableHeaders = [
     { key: "id", label: "ID" },
     { key: "name", label: "Name" },
     { key: "email", label: "Email Id" },
     { key: "contact", label: "Contact No." },
-    { key: "avatarImageURI", label: "Avatar ImageURI" },
+    { key: "vehicleNo", label: "Vehicle no." },
+    { key: "vehicleCompany", label: "Vehicle Company" },
+    { key: "vehicleType", label: "Vehicle Type" },
+    { key: "dlNumber", label: "DL Number" },
+    { key: "aadharNumber", label: "Aadhar Number" },
+    { key: "bankName", label: "Bank Name" },
+    { key: "accountHolder", label: "Account Holder Name" },
+    { key: "accountNo", label: "Account No." },
+    { key: "ifsc", label: "IFSC Code" },
+    { key: "upiId", label: "UPI Id" },
+    { key: "vehicleImageURI", label: "Vehicle ImageURI" },
+    { key: "aadharImageURI", label: "Aadhar ImageURI" },
+    { key: "dlImageURI", label: "DL ImageURI" },
+    { key: "rcImageURI", label: "RC ImageURI" },
     { key: "status", label: "Status" },
-    { key: "control", label: "Control" },
+    { key: "control", label: "control" },
   ];
 
   const [tableData, setTableData] = useState([
@@ -30,14 +51,33 @@ function UserEntity() {
       name: "John Doe",
       email: "john@example.com",
       contact: "9876543210",
-      avatarImageURI:
+      vehicleNo: "MH12AB1234",
+      vehicleCompany: "Tata",
+      vehicleType: "Truck",
+      dlNumber: "DL123456789",
+      aadharNumber: "AADHAR123456",
+      bankName: "HDFC",
+      accountHolder: "John D.",
+      accountNo: "1234567890",
+      ifsc: "HDFC0001234",
+      upiId: "john@upi",
+      vehicleImageURI:
         "https://images.unsplash.com/photo-1729457046390-0eb8571eb1d4?w=600",
+      aadharImageURI:
+        "https://unsplash.com/photos/a-purple-vase-with-two-purple-flowers-in-it-BOa6aiwEMrc",
+      dlImageURI:
+        "https://images.unsplash.com/photo-1729457046390-0eb8571eb1d4?w=600",
+      rcImageURI:
+        "https://images.unsplash.com/photo-1733690577845-4f4641a456b3?w=600",
       status: "Pending",
     },
   ]);
-  const handleControlClick =(data)=>{
-  console.log("driver =",data)
-  }
+  const handleControlClick = (data) => {
+    setSelectedDriver(data);
+    setControlModalOpen(true);
+    // console.log("driver =",data)
+  };
+
   const handleImageClick = (uri) => {
     setSelectedImage(uri);
     setImageModalOpen(true);
@@ -61,23 +101,24 @@ function UserEntity() {
           <div className="flex flex-col items-center gap-4">
             <div className="w-14 h-14 border-4 border-orange-500 border-t-transparent rounded-full animate-spin" />
             <div className="text-orange-600 font-medium text-lg">
-              Loading Users...
+              Loading Drivers...
             </div>
           </div>
-        </div>):(<>
+        </div>):(
+          <>
       <div className="bg-orange-100 border-b border-orange-500 h-14 flex items-center justify-around px-4">
         <input
           type="text"
-          placeholder="Search User by Name, Email or Contact..."
+          placeholder="Search Driver by Name, Email or Contact..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="p-1 px-4 rounded-md border border-orange-400 bg-white w-full max-w-md"
+          className="p-1 rounded-md px-4 border border-orange-400 bg-white w-full max-w-md"
         />
         <button
-          onClick={() => setCreateUserModalOpen(true)}
-          className="bg-cyan-700 hover:bg-gray-600 text-white text-sm px-3 py-1 rounded-sm shadow-sm transition-all duration-200"
+          onClick={() => setCreateDriverModalOpen(true)}
+          className="bg-cyan-800 hover:bg-gray-600 text-white text-sm px-3 py-1 rounded-sm shadow-sm transition-all duration-200"
         >
-          Create User
+          Create Driver
         </button>
       </div>
       <div className="h-full overflow-auto p-4">
@@ -184,12 +225,17 @@ function UserEntity() {
           selectedRowIndex !== null ? tableData[selectedRowIndex].status : ""
         }
       />
-      <CreateUserModal
-        isOpen={createUserModalOpen}
-        onClose={() => setCreateUserModalOpen(false)}
+      <CreateDriverModal
+        isOpen={createDriverModalOpen}
+        onClose={() => setCreateDriverModalOpen(false)}
+      />
+      <DriverControlModal
+        isOpen={controlModalOpen}
+        onClose={() => setControlModalOpen(false)}
+        driverEntity={selectedDriver}
       /></>)}
     </div>
   );
 }
 
-export default UserEntity;
+export default AllDrivers;
