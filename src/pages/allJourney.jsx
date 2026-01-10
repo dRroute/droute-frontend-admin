@@ -90,7 +90,7 @@ function AllJourney() {
             <tbody>
               {tableData
                 .filter((row) => {
-                  if (!search.trim()) return true; // Show all if search empty
+                  if (!search.trim()) return true;
                   const s = search.toLowerCase();
                   return (
                     (row.id && row.id.toLowerCase().includes(s)) ||

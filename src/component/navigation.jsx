@@ -4,6 +4,7 @@ import whiteLogo from "../assets/transparentIcon.png";
 const Navigation = () => {
   const navigate = useNavigate();
   const location = useLocation(); // 🔍 Get current path
+  //  Define navigation items
 
   const navItems = [
     { label: "Verify Driver", path: "/dashboard/verifydriver" },
@@ -23,6 +24,7 @@ const Navigation = () => {
       </div>
 
       {/* Navigation Items */}
+      {/* there is a */}
       <nav className="flex flex-col gap-4 p-6">
         {navItems.map((item, index) => {
           const isActive = location.pathname === item.path;
