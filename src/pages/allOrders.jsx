@@ -24,7 +24,7 @@ function AllOrders() {
     { key: "height", label: "Height" },
     { key: "value", label: "Value" },
     { key: "status", label: "Status" },
-    
+    // { key: "control", label: "control" },
 
   ];
 
