@@ -8,7 +8,7 @@ import ForgotPasswordModal from "./ForgotPasswordModal";
 import whiteLogo from "../assets/transparentIcon.png";
 export default function Landing() {
   const [activeModal, setActiveModal] = useState(null); // 'login', 'signup', 'forgot-password', or null
-
+// Functions to open/close modals
   const openModal = (modalType) => setActiveModal(modalType);
   const closeModal = () => setActiveModal(null);
 

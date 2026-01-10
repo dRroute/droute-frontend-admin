@@ -12,7 +12,7 @@ function DriverJourney() {
      const dispatch = useDispatch();
   const isLoading = useSelector(selectAuthloader);
   const errorMessage = useSelector(selectAuthErrorMessage);
-
+// Table Headers
   const [selectedJourney, setSelectedJourney] = useState(false);
   const tableHeaders = [
     { key: "id", label: "ID" },

@@ -11,5 +11,5 @@ function Dashboard() {
     </div>
   );
 }
-
+// src/pages/Dashboard.jsx
 export default Dashboard;

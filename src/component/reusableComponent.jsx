@@ -54,7 +54,7 @@ export function StatusModal({
                 onChange={(e) => setSelectedStatus(e.target.value)}
               />
               <span>{status}</span>
-            </label>
+            </label>//map((status) => (
           ))}
         </div>
 

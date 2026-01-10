@@ -5,3 +5,4 @@ function NotFound() {
 }
 
 export default NotFound
+// src/pages/NotFound.jsx
