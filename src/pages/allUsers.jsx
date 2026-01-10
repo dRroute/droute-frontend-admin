@@ -86,6 +86,7 @@ function AllUsers() {
               onClick={() => setCreateUserModalOpen(true)}
               className="bg-cyan-700 hover:bg-gray-600 text-white text-sm px-3 py-1 rounded-sm shadow-sm transition-all duration-200"
             >
+              
               Create User
             </button>
           </div>
@@ -107,7 +108,7 @@ function AllUsers() {
                 <tbody>
                   {tableData
                     .filter((row) => {
-                      if (!search.trim()) return true; // Show all if search empty
+                      if (!search.trim()) return true; 
                       const s = search.toLowerCase();
                       return (
                         (row.name && row.name.toLowerCase().includes(s)) ||
