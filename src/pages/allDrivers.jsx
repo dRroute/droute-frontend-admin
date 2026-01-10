@@ -8,7 +8,7 @@ import {
 import { FaEdit } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAuthErrorMessage, selectAuthloader } from "../redux/selector";
-
+// All Drivers Page Component
 function AllDrivers() {
   const [search, setSearch] = useState("");
   const [imageModalOpen, setImageModalOpen] = useState(false);
