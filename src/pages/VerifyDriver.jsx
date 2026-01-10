@@ -30,6 +30,7 @@ function VerifyDriver() {
     { key: "rcImageURI", label: "RC ImageURI" },
     { key: "status", label: "Status" }
   ];
+  // Sample static data for demonstration
 
   const [tableData, setTableData] = useState([
     {
