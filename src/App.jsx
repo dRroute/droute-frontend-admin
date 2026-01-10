@@ -19,7 +19,7 @@ function App() {
   const user = useSelector(selectUser);
   return (
     <Routes>
-      {/* 👇 Route for "/" based on user */}
+      {/* 👇 Route for "/"}
       <Route path="/" element={user ? <Navigate to="/dashboard" /> : <Landing />} />
 
       {/* Dashboard + Nested Routes for logged-in users */}
