@@ -16,7 +16,7 @@ export default function LoginModal({ isOpen, onClose, onSwitchToForgotPassword }
     password: "",
     role:"admin"
   })
-
+// Handle Login
  const handleLogin = async (e) => {
   console.log("sign in data=>",loginData)
   e.preventDefault(); // prevent form from refreshing
