@@ -36,7 +36,7 @@ export default function SignupModal({ isOpen, onClose, onSwitchToLogin }) {
       setIsLoading(false)
     }
   }
-
+// Handle Google Signup
   const handleGoogleSignup = async () => {
     setIsLoading(true)
     try {
