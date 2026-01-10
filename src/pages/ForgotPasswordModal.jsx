@@ -11,7 +11,7 @@ export default function ForgotPasswordModal({ isOpen, onClose, onSwitchToLogin }
   const handleResetPassword = async (e) => {
     e.preventDefault()
     setIsLoading(true)
-
+   // Simulate API call
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500))
       console.log("Password reset request for:", email)
