@@ -13,7 +13,7 @@ import {
   Eye,
   X,
 } from "lucide-react"
-
+// Mock data for support tickets
 const mockTickets = [
   {
     id: "TKT-001",
