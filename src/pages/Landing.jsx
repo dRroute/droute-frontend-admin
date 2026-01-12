@@ -5,6 +5,7 @@ import { Truck, Clock, Shield, Star, MapPin, Phone } from "lucide-react";
 import LoginModal from "./LoginModal";
 // import SignupModal from "./SignupModal"
 import ForgotPasswordModal from "./ForgotPasswordModal";
+import ChatBot from "../component/ChatBot";
 import whiteLogo from "../assets/transparentIcon.png";
 export default function Landing() {
   const [activeModal, setActiveModal] = useState(null); // 'login', 'signup', 'forgot-password', or null
@@ -317,6 +318,9 @@ export default function Landing() {
           </a>
         </nav>
       </footer>
+      
+      {/* ChatBot */}
+      <ChatBot />
     </div>
   );
 }
