@@ -4,14 +4,10 @@ import { useState, useEffect, useRef } from "react"
 import { FiSend, FiX, FiMessageCircle, FiPhone, FiUser } from "react-icons/fi"
 
 const randomBot =[
-<<<<<<< HEAD
-    {name:"Alok Singh",image:"https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWVufGVufDB8fDB8fHww"},
-    {name:"Ravi Kumar",image:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVufGVufDB8fDB8fHww"},
-    {name:"Neha Agarwal",image:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2lybHxlbnwwfHwwfHx8MA%3D%3D"},
-    {name:"Priya Sharma",image:"https://images.unsplash.com/photo-1586351012965-861624544334?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z2lybHxlbnwwfHwwfHx8MA%3D%3D"}
-=======
-    {name:"Jay Singh",image:"https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWVufGVufDB8fDB8fHww"},
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
+  {name:"Alok Singh",image:"https://plus.unsplash.com/premium_photo-1671656349322-41de944d259b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWVufGVufDB8fDB8fHww"},
+  {name:"Ravi Kumar",image:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWVufGVufDB8fDB8fHww"},
+  {name:"Neha Agarwal",image:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Z2lybHxlbnwwfHwwfHx8MA%3D%3D"},
+  {name:"Priya Sharma",image:"https://images.unsplash.com/photo-1586351012965-861624544334?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z2lybHxlbnwwfHwwfHx8MA%3D%3D"}
 ]
 
 export default function ChatBot() {
@@ -22,13 +18,8 @@ export default function ChatBot() {
   const [collectedData, setCollectedData] = useState({
     name: "",
     phone: "",
-<<<<<<< HEAD
-    interest: "",
-    flatType: "",
-=======
     service: "",
     location: "",
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
     message: "",
   })
   const [conversationStep, setConversationStep] = useState("greeting")
@@ -44,15 +35,9 @@ export default function ChatBot() {
   useEffect(() => {
     if (open && messages.length === 0) {
       addBotMessage(
-<<<<<<< HEAD
-        `Hey! 👋 I'm ${currentBot.name} from Satyam Developers. How can I help you understand this amazing project?`,
-      )
-      setConversationStep("interest")
-=======
         `Hey! 👋 I'm ${currentBot.name}, Software Developer at Droute. How can I help you with your delivery needs today?`,
       )
       setConversationStep("service")
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
     }
   }, [open])
 
@@ -83,33 +68,6 @@ export default function ChatBot() {
     setIsLoading(false)
   }
 
-<<<<<<< HEAD
-  const interestOptions = [
-    "🏠 Pricing & Floor Plans",
-    "📄 Download Brochure",
-    "💎 Get The Best Quote",
-    "🏘️ Site Visit or Virtual Tour",
-    "💬 Pricing on WhatsApp",
-    "📞 Get A Call Back",
-  ]
-  const flatSizeOptions = [
-    "🏠 1 BHK",
-    "🏡 2 BHK", 
-    "🏘️ 3 BHK",
-    "🏢 4 BHK"
-  ]
-  const handleInterestSelect = async (interest) => {
-    addUserMessage(interest)
-    setCollectedData({ ...collectedData, interest })
-    await simulateBotTyping(`Great choice! 💫 Now, what's your name so I know how to address you?`, 800)
-    setConversationStep("name")
-  }
-
-  const handleFlatSelect = async (flatType) => {
-    addUserMessage(flatType)
-    setCollectedData({ ...collectedData, flatType })
-    await simulateBotTyping(`Perfect! 🏠 Finally, do you have any specific message or requirements?`, 800)
-=======
   const serviceOptions = [
     "📦 Same-Day Delivery",
     "🚚 Next-Day Delivery",
@@ -135,7 +93,6 @@ export default function ChatBot() {
     addUserMessage(location)
     setCollectedData({ ...collectedData, location })
     await simulateBotTyping(`Perfect! 📍 Any specific delivery instructions or requirements?`, 800)
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
     setConversationStep("message")
   }
 
@@ -167,17 +124,10 @@ export default function ChatBot() {
     setInputValue("")
 
     await simulateBotTyping(
-<<<<<<< HEAD
-      `Great! 📱 Now, which type of flat are you interested in?`,
-      800,
-    )
-    setConversationStep("flatType")
-=======
       `Great! 📱 What's your delivery location preference?`,
       800,
     )
     setConversationStep("location")
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
   }
 
   const handleMessageSubmit = async () => {
@@ -186,17 +136,10 @@ export default function ChatBot() {
     setCollectedData({ ...collectedData, message: userMessage })
     setInputValue("")
 
-<<<<<<< HEAD
-    const finalMessage = `Hey I'm ${collectedData.name}. I'm interested in ${collectedData.interest}, and I'm willing to buy ${collectedData.flatType} flat. Message: ${userMessage}`
-
-    await simulateBotTyping(
-      `Perfect! ✨ I've received your details. Our team will contact you shortly. Thank you for choosing Satyam Developers! 🎉`,
-=======
     const finalMessage = `Hi, I'm ${collectedData.name}. I need ${collectedData.service} for ${collectedData.location}. Additional details: ${userMessage}`
 
     await simulateBotTyping(
       `Perfect! ✨ I've received your delivery request. Our team will contact you shortly with pricing and pickup details. Thank you for choosing Droute! 🚚`,
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
       1000,
     )
   
@@ -231,11 +174,7 @@ export default function ChatBot() {
             {/* Header */}
             <div
               className="p-4 text-white flex items-center gap-3 flex-shrink-0"
-<<<<<<< HEAD
-              style={{ background: "linear-gradient(135deg, #9e7242 0%, #f09051 100%)" }}
-=======
               style={{ background: "linear-gradient(135deg, #ea580c 0%, #f97316 100%)" }}
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
             >
               <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0 overflow-hidden">
                 <div className="h-3 w-3 rounded-full bg-green-400 absolute top-4 left-12"></div>
@@ -247,11 +186,7 @@ export default function ChatBot() {
               </div>
               <div className="flex-1">
                 <h3 className="font-bold text-sm">{currentBot.name}</h3>
-<<<<<<< HEAD
-                <p className="text-xs opacity-90">Satyam Developers</p>
-=======
                 <p className="text-xs opacity-90">Droute Delivery</p>
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
               </div>
               <button className="p-1 hover:bg-white/20 rounded-full transition" onClick={() => setOpen(false)}>
                 <FiX size={18} />
@@ -289,11 +224,7 @@ export default function ChatBot() {
                         <div
                           className="p-3 text-white"
                           style={{
-<<<<<<< HEAD
-                            background: "linear-gradient(135deg, #9e7242 0%, #f09051 100%)",
-=======
                             background: "linear-gradient(135deg, #ea580c 0%, #f97316 100%)",
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
                             borderRadius: "12px 12px 0px 12px"
                           }}
                         >
@@ -324,32 +255,20 @@ export default function ChatBot() {
                     <div className="flex gap-1">
                       <div
                         className="w-2 h-2 rounded-full"
-<<<<<<< HEAD
-                        style={{ animation: "pulse 1.4s infinite", background: "#9e7242" }}
-=======
                         style={{ animation: "pulse 1.4s infinite", background: "#ea580c" }}
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
                       ></div>
                       <div
                         className="w-2 h-2 rounded-full"
                         style={{
                           animation: "pulse 1.4s infinite 0.2s",
-<<<<<<< HEAD
-                          background: "#9e7242",
-=======
                           background: "#ea580c",
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
                         }}
                       ></div>
                       <div
                         className="w-2 h-2 rounded-full"
                         style={{
                           animation: "pulse 1.4s infinite 0.4s",
-<<<<<<< HEAD
-                          background: "#9e7242",
-=======
                           background: "#ea580c",
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
                         }}
                       ></div>
                     </div>
@@ -360,30 +279,13 @@ export default function ChatBot() {
               <div ref={messagesEndRef} />
             </div>
 
-<<<<<<< HEAD
-            {/* Interest Selection */}
-            {conversationStep === "interest" && (
-=======
             {/* Service Selection */}
             {conversationStep === "service" && (
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
               <div className="flex gap-2 justify-end p-4 bg-gray-50">
                 <div className="max-w-xs">
                   <div
                     className="p-3 text-white"
                     style={{
-<<<<<<< HEAD
-                      background: "linear-gradient(135deg, #9e7242 0%, #f09051 100%)",
-                      borderRadius: "12px 12px 0px 12px"
-                    }}
-                  >
-                    <p className="text-sm mb-3">Please select your interest:</p>
-                    <div className="space-y-2">
-                      {interestOptions.map((option) => (
-                        <button
-                          key={option}
-                          onClick={() => handleInterestSelect(option)}
-=======
                       background: "linear-gradient(135deg, #ea580c 0%, #f97316 100%)",
                       borderRadius: "12px 12px 0px 12px"
                     }}
@@ -394,7 +296,6 @@ export default function ChatBot() {
                         <button
                           key={option}
                           onClick={() => handleServiceSelect(option)}
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
                           className="w-full text-left p-2 rounded border-2 border-white text-white transition hover:bg-white hover:text-gray-800"
                         >
                           <p className="text-xs font-medium">{option}</p>
@@ -406,30 +307,13 @@ export default function ChatBot() {
               </div>
             )}
 
-<<<<<<< HEAD
-            {/* Flat Type Selection */}
-            {conversationStep === "flatType" && (
-=======
             {/* Location Selection */}
             {conversationStep === "location" && (
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
               <div className="flex gap-2 justify-end p-4 bg-gray-50">
                 <div className="max-w-xs">
                   <div
                     className="p-3 text-white"
                     style={{
-<<<<<<< HEAD
-                      background: "linear-gradient(135deg, #9e7242 0%, #f09051 100%)",
-                      borderRadius: "12px 12px 0px 12px"
-                    }}
-                  >
-                    <p className="text-sm mb-3">Which flat type interests you?</p>
-                    <div className="grid grid-cols-2 gap-2">
-                      {flatSizeOptions.map((option) => (
-                        <button
-                          key={option}
-                          onClick={() => handleFlatSelect(option)}
-=======
                       background: "linear-gradient(135deg, #ea580c 0%, #f97316 100%)",
                       borderRadius: "12px 12px 0px 12px"
                     }}
@@ -440,7 +324,6 @@ export default function ChatBot() {
                         <button
                           key={option}
                           onClick={() => handleLocationSelect(option)}
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
                           className="p-2 rounded border-2 border-white text-white transition hover:bg-white hover:text-gray-800"
                         >
                           <p className="text-xs font-medium">{option}</p>
@@ -472,11 +355,7 @@ export default function ChatBot() {
                           ? "Enter your name..." 
                           : conversationStep === "phone" 
                           ? "Enter mobile number..." 
-<<<<<<< HEAD
-                          : "Enter your message ..."
-=======
                           : "Enter delivery instructions..."
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
                       }
                       value={inputValue}
                       onChange={(e) => setInputValue(e.target.value)}
@@ -490,11 +369,7 @@ export default function ChatBot() {
                     disabled={conversationStep !== "message" && !inputValue.trim()}
                     className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg transition disabled:opacity-50"
                     style={{
-<<<<<<< HEAD
-                      background: "linear-gradient(135deg, #9e7242 0%, #f09051 100%)",
-=======
                       background: "linear-gradient(135deg, #ea580c 0%, #f97316 100%)",
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
                     }}
                   >
                     <FiSend size={18} />
@@ -506,13 +381,8 @@ export default function ChatBot() {
             {/* Confirmation State */}
             {conversationStep === "confirmation" && (
               <div className="p-4 border-t bg-white flex-shrink-0 text-center space-y-2">
-<<<<<<< HEAD
-                <p className="text-sm font-medium text-gray-700">✅ Your response has been submitted</p>
-                <p className="text-xs text-gray-500">Our team will contact you soon</p>
-=======
                 <p className="text-sm font-medium text-gray-700">✅ Your delivery request has been submitted</p>
                 <p className="text-xs text-gray-500">Our delivery team will contact you soon</p>
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
               </div>
             )}
           </div>
@@ -525,11 +395,7 @@ export default function ChatBot() {
           onClick={() => setOpen(true)}
           className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white font-bold text-xl transition hover:scale-110"
           style={{
-<<<<<<< HEAD
-            background: "linear-gradient(135deg, #9e7242 0%, #f09051 100%)",
-=======
             background: "linear-gradient(135deg, #ea580c 0%, #f97316 100%)",
->>>>>>> 5620d84 (Add ChatBot component for delivery service interaction)
           }}
         >
           <FiMessageCircle size={24} />
